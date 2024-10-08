@@ -10,6 +10,7 @@
     
     <?php
         require __DIR__ . '/funcionesbd.php';
+        require __DIR__ . '/funcionesGnrl.php';
 
         $db = 'mysql';
         $host = 'localhost';
@@ -24,7 +25,16 @@
     ?>
 
     <h1 id="titulo">Gestión de Productos</h1>
+
+    <a id="crear" href="crear.php">Crear</a>
+
     <table>
+        <tr>
+            <th>Detalle</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
         <?php 
             while($producto = $productos -> fetch(PDO::FETCH_OBJ)){
                 echo "<tr>
