@@ -7,32 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <?php
+        require __DIR__ . '/funcionesbd.php';
+
+        $db = 'mysql';
+        $host = 'localhost';
+        $username = 'usuario';
+        $password = 'clave';
+        $dbname = 'proyecto';
+
+        $conn = establecerConexion($db, $host, $username, $password, $dbname);
+
+        $productos = recogerProductos($conn);
+
+    ?>
+
     <h1 id="titulo">Gestión de Productos</h1>
     <table>
-        <tr>
-            <th>Detalle</th>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Acciones</th>
-        </tr>
-        <tr>
-            <td>Detalle</td>
-            <td>3</td>
-            <td>Mouse nose que no se cuantos</td>
-            <td>Actualizar | Borrar</td>
-        </tr>
-        <tr>
-            <td>Detalle</td>
-            <td>3</td>
-            <td>Mouse nose que no se cuantos</td>
-            <td>Actualizar | Borrar</td>
-        </tr>
-        <tr>
-            <td>Detalle</td>
-            <td>3</td>
-            <td>Mouse nose que no se cuantos</td>
-            <td>Actualizar | Borrar</td>
-        </tr>
+        <?php 
+            while($producto = $productos -> fetch(PDO::FETCH_OBJ)){
+                echo "<tr>
+                    <td><button>Detalle</button></td>
+                    <td> {$producto -> id} </td>
+                    <td> {$producto -> nombre} </td>
+                    <td><button>Actualizar</button> | <button>Borrar</button></td>
+                </tr>";
+            }
+        ?>
     </table>
 </body>
 </html>
