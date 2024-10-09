@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de productos - listado</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+    </style>
 </head>
 <body>
     
@@ -24,9 +27,9 @@
 
     ?>
 
-    <h1 id="titulo">Gestión de Productos</h1>
+    <h1 id='titulo'>Gestión de Productos</h1>
 
-    <a id="crear" href="crear.php">Crear</a>
+    <a id='crear' href='crear.php'>Crear</a>
 
     <table>
         <tr>
