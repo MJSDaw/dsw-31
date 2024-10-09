@@ -17,7 +17,11 @@
     }
 
     function recogerProductos($conexion){
-        return $conexion -> query('select id, nombre from productos');
+        return $conexion->query('select id, nombre from productos');
+    }
+
+    function recogerProductoEspecifico($conexion, $id){
+        return $conexion->query("select * from productos where id = $id");
     }
 
 ?>

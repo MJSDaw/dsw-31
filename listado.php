@@ -12,14 +12,9 @@
 <body>
     
     <?php
+        require_once __DIR__ . '/dbconfig.php';
         require __DIR__ . '/funcionesbd.php';
         require __DIR__ . '/funcionesGnrl.php';
-
-        $db = 'mysql';
-        $host = 'localhost';
-        $username = 'usuario';
-        $password = 'clave';
-        $dbname = 'proyecto';
 
         $conn = establecerConexion($db, $host, $username, $password, $dbname);
 
@@ -39,11 +34,11 @@
             <th>Acciones</th>
         </tr>
         <?php 
-            while($producto = $productos -> fetch(PDO::FETCH_OBJ)){
+            while($producto = $productos ->fetch(PDO::FETCH_OBJ)){
                 echo "<tr>
-                    <td><button>Detalle</button></td>
-                    <td> {$producto -> id} </td>
-                    <td> {$producto -> nombre} </td>
+                    <td><a id='detalle' href='detalle.php?id={$producto->id}'>Detalle</a></td>
+                    <td> {$producto->id} </td>
+                    <td> {$producto->nombre} </td>
                     <td><button>Actualizar</button> | <button>Borrar</button></td>
                 </tr>";
             }
