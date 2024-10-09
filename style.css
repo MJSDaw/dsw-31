@@ -1,11 +1,11 @@
 * {
     padding: 0;
     margin: 0;
-    background-color: lightslategray;
     font-family: 'Nunito', 'sans-serif';
 }
 body{
     padding-top: 2rem;
+    background-color: lightslategray;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -33,4 +33,11 @@ button, #crear, #detalle{
     border-radius: 0.5rem;
     text-decoration: none;
     color: black;
+}
+.producto-info{
+    width: 80vw;
+    background-color: darkseagreen;
+    border: 0.1rem solid darkgreen;
+    border-radius: 0.5rem;
+    padding: 1rem;
 }

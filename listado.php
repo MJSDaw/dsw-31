@@ -20,6 +20,7 @@
 
         $productos = recogerProductos($conn);
 
+        $conn = null; 
     ?>
 
     <h1 id='titulo'>Gestión de Productos</h1>

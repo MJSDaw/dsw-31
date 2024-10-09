@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de producto</title>
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
@@ -12,14 +13,29 @@
 
         $conn = establecerConexion($db, $host, $username, $password, $dbname);
 
-        $producto = recogerProductoEspecifico($conn, $_GET['id']);
+        if (isset($_GET['id'])) {
+            $productoId = $_GET['id'];
 
-        $producto = $producto->fetch(PDO::FETCH_OBJ);
+            $producto = recogerProductoEspecifico($conn, $productoId);
+            $producto = $producto->fetch(PDO::FETCH_OBJ);
 
-        echo "El producto es $producto->nombre";
+            if ($producto) {
+                echo "<h1>Detalle del Producto</h1>
+                      <div class='producto-info'>
+                          <p><strong>Nombre:</strong> {$producto->nombre}</p>
+                          <p><strong>Nombre Corto:</strong> {$producto->nombre_corto}</p>
+                          <p><strong>Descripción:</strong> {$producto->descripcion}</p>
+                          <p><strong>PVP:</strong> €{$producto->pvp}</p>
+                      </div>";
 
-        $conn = null;
+            } else {
+                echo "<h2>Producto no encontrado</h2>";
+            }
+        } else {
+            echo "<h2>ID de producto no especificado</h2>";
+        }
 
+        $conn = null; 
     ?>
 </body>
 </html>
