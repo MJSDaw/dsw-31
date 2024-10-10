@@ -40,7 +40,7 @@
                     <td><a id='detalle' href='detalle.php?id={$producto->id}'>Detalle</a></td>
                     <td> {$producto->id} </td>
                     <td> {$producto->nombre} </td>
-                    <td><button>Actualizar</button> | <button>Borrar</button></td>
+                    <td><a href='update.php?id={$producto->id}'>Actualizar</a> | <a href='borrar.php?id={$producto->id}'>Borrar</a></td>
                 </tr>";
             }
         ?>

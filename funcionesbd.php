@@ -31,4 +31,9 @@
     function crearProducto($conexion, $nombre, $nombreCorto, $precio, $familia, $descripcion){
         $conexion->query("insert into productos (nombre, nombre_corto, descripcion, pvp, familia) values ('$nombre', '$nombreCorto', '$descripcion', '$precio', '$familia');");
     }
+
+    function eliminarProducto($conexion, $id) {
+        return $conexion->query("DELETE FROM productos WHERE id = {$id};");
+    }
+    
 ?>
