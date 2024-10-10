@@ -26,7 +26,7 @@ td{
     text-align: center;
     padding: 0.7rem;
 }
-button, #crear, #detalle{
+button, #crear, #detalle, a{
     padding: 0.2rem;
     background-color: rgb(218, 218, 247);
     border: 0.1rem solid darkgreen;
@@ -34,10 +34,19 @@ button, #crear, #detalle{
     text-decoration: none;
     color: black;
 }
-.producto-info{
+.producto-info, form{
     width: 80vw;
     background-color: darkseagreen;
     border: 0.1rem solid darkgreen;
     border-radius: 0.5rem;
     padding: 1rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form input, form select{
+    max-width: 50%;
+    margin-bottom: 0.2rem;
 }

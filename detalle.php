@@ -26,7 +26,8 @@
                           <p><strong>Nombre Corto:</strong> {$producto->nombre_corto}</p>
                           <p><strong>Descripción:</strong> {$producto->descripcion}</p>
                           <p><strong>PVP:</strong> €{$producto->pvp}</p>
-                      </div>";
+                      </div>
+                      <a href='listado.php'>Volver</a>";
 
             } else {
                 echo "<h2>Producto no encontrado</h2>";
