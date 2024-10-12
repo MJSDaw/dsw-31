@@ -4,13 +4,18 @@
     $precio = $_POST['precio'];
     $familia = $_POST['familia'];
     $descripcion = $_POST['descripcion'];
+    $id = $_POST['id'];
 
     require_once __DIR__."/funcionesbd.php";
     require_once __DIR__."/dbconfig.php";
 
     $conn = establecerConexion($db, $host, $username, $password, $dbname);
 
-    crearProducto($conn, $nombre, $nombreCorto, $precio, $familia, $descripcion);
+    if(isset($id)){
+        actualizarProducto($conn, $nombre, $nombreCorto, $precio, $familia, $descripcion, $id);
+    } else {
+        crearProducto($conn, $nombre, $nombreCorto, $precio, $familia, $descripcion);
+    }
 
     $conn = null;
 

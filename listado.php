@@ -14,7 +14,6 @@
     <?php
         require_once __DIR__ . '/dbconfig.php';
         require __DIR__ . '/funcionesbd.php';
-        require __DIR__ . '/funcionesGnrl.php';
 
         $conn = establecerConexion($db, $host, $username, $password, $dbname);
 

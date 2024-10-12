@@ -32,6 +32,17 @@
         $conexion->query("insert into productos (nombre, nombre_corto, descripcion, pvp, familia) values ('$nombre', '$nombreCorto', '$descripcion', '$precio', '$familia');");
     }
 
+    function actualizarProducto($conexion, $nombre, $nombreCorto, $precio, $familia, $descripcion, $id){
+        $conexion->query("UPDATE productos 
+                  SET nombre = '$nombre', 
+                      nombre_corto = '$nombreCorto', 
+                      descripcion = '$descripcion', 
+                      pvp = $precio, 
+                      familia = '$familia' 
+                  WHERE id = $id;");
+
+    }
+
     function eliminarProducto($conexion, $id) {
         return $conexion->query("DELETE FROM productos WHERE id = {$id};");
     }
